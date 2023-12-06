@@ -1,13 +1,14 @@
-/* ****************** */
+/**************************/
 /* HEADER */
+/**************************/
 
 .header {
   display: flex;
-  align-items: CENTER;
   justify-content: space-between;
+  align-items: center;
   background-color: #fdf2e9;
 
-  /* because we want header to be sticky later */
+  /* Because we want header to be sticky later */
   height: 9.6rem;
   padding: 0 4.8rem;
   position: relative;
@@ -17,21 +18,22 @@
   height: 2.2rem;
 }
 
-/* ******************* */
+/**************************/
 /* NAVIGATION */
+/**************************/
 
 .main-nav-list {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 3.2rem;
+  gap: 4.8rem;
 }
 
 .main-nav-link:link,
 .main-nav-link:visited {
   display: inline-block;
-  color: #333;
   text-decoration: none;
+  color: #333;
   font-weight: 500;
   font-size: 1.8rem;
   transition: all 0.3s;
@@ -55,11 +57,12 @@
   background-color: #cf711f;
 }
 
-/* mobile */
+/* MOBILE */
 .btn-mobile-nav {
   border: none;
   background: none;
   cursor: pointer;
+
   display: none;
 }
 
@@ -73,8 +76,28 @@
   display: none;
 }
 
-/* ****************** */
+/* sticky navigation */
+
+.sticky .header {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 8rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: rgba(255, 255, 255, 0.97);
+  z-index: 999;
+  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.03);
+}
+
+.sticky .section-hero {
+  margin-top: 9.6rem;
+}
+
+/**************************/
 /* HERO SECTION */
+/**************************/
 
 .section-hero {
   background-color: #fdf2e9;
@@ -87,8 +110,8 @@
   padding: 0 3.2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
   gap: 9.6rem;
+  align-items: center;
 }
 
 .hero-description {
@@ -104,8 +127,8 @@
 .delivered-meals {
   display: flex;
   align-items: center;
-  margin-top: 8rem;
   gap: 1.6rem;
+  margin-top: 8rem;
 }
 
 .delivered-imgs {
@@ -134,19 +157,21 @@
   font-weight: 700;
 }
 
-/* **************** */
-/* featured in */
+/**************************/
+/* FEATURED IN SECTION */
+/**************************/
 
 .section-featured {
   padding: 4.8rem 0 3.2rem 0;
 }
+
 .heading-featured-in {
   font-size: 1.4rem;
   text-transform: uppercase;
   letter-spacing: 0.75px;
   font-weight: 500;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2.4rem;
   color: #888;
 }
 
@@ -160,46 +185,53 @@
   filter: brightness(0);
   opacity: 50%;
 }
-/* **************** */
-/* how it works */
+
+/**************************/
+/* HOW IT WORKS SECTION */
+/**************************/
 
 .section-how {
-  padding: 9.6rem;
+  padding: 9.6rem 0;
 }
 
 .step-number {
-  font-size: 9.8rem;
+  font-size: 8.6rem;
   font-weight: 600;
   color: #ddd;
   margin-bottom: 1.2rem;
 }
 
 .step-description {
-  font-size: 2rem;
+  font-size: 1.8rem;
   line-height: 1.8;
 }
 
 .step-img-box {
-  display: flex;
   position: relative;
+
+  display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .step-img-box::before,
 .step-img-box::after {
+  content: "";
+  display: block;
+  border-radius: 50%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  content: "";
-  display: block;
-  border-radius: 50%;
 }
 
 .step-img-box::before {
   width: 60%;
+  /* height: 60%; */
+
+  /* 60% of parent's width */
   padding-bottom: 60%;
+
   background-color: #fdf2e9;
   z-index: -2;
 }
@@ -213,17 +245,19 @@
 
 .step-img {
   width: 35%;
+  /* z-index: 10; */
 }
 
-/* **************** */
-/* Meals section */
+/**************************/
+/* MEALS SECTION */
+/**************************/
 
 .section-meals {
-  padding: 9.6rem;
+  padding: 9.6rem 0;
 }
 
 .meal {
-  box-shadow: 0rem 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
   border-radius: 11px;
   overflow: hidden;
   transition: all 0.4s;
@@ -238,7 +272,7 @@
   padding: 3.2rem 4.8rem 4.8rem 4.8rem;
 }
 
-.meal-tag {
+.meal-tags {
   margin-bottom: 1.2rem;
   display: flex;
   gap: 0.4rem;
@@ -247,9 +281,8 @@
 .tag {
   display: inline-block;
   padding: 0.4rem 0.8rem;
-  font-style: 1.2rem;
+  font-size: 1.2rem;
   text-transform: uppercase;
-
   color: #333;
   border-radius: 100px;
   font-weight: 600;
@@ -258,17 +291,15 @@
 .tag--vegetarian {
   background-color: #51cf66;
 }
-
 .tag--vegan {
   background-color: #94d82d;
 }
-
 .tag--paleo {
   background-color: #ffd43b;
 }
 
 .meal-title {
-  font-size: 2rem;
+  font-size: 2.4rem;
   color: #333;
   font-weight: 600;
   margin-bottom: 3.2rem;
@@ -303,8 +334,9 @@
   font-size: 1.8rem;
 }
 
-/* **************** */
-/* testimonial section */
+/**************************/
+/* TESTIMONIALS SECTION */
+/**************************/
 
 .section-testimonials {
   background-color: #fdf2e9;
@@ -313,7 +345,7 @@
   align-items: center;
 }
 
-.testimonial-container {
+.testimonials-container {
   padding: 9.6rem;
 }
 
@@ -325,8 +357,9 @@
 }
 
 .testimonial-img {
-  height: 6.4rem;
+  width: 6.4rem;
   border-radius: 50%;
+  margin-bottom: 1.2rem;
 }
 
 .testimonial-text {
@@ -347,31 +380,31 @@
   padding: 1.6rem;
 }
 
+.gallery-item {
+  overflow: hidden;
+}
+
 .gallery-item img {
   display: block;
   width: 100%;
   transition: all 0.4s;
 }
 
-.gallery-item {
-  overflow: hidden;
-}
-
 .gallery-item img:hover {
   transform: scale(1.1);
 }
 
-/* **************** */
-/* Pricing section */
+/**************************/
+/* MEALS SECTION */
+/**************************/
 
 .section-pricing {
-  padding: 9.6rem;
+  padding: 9.6rem 0;
 }
 
 .pricing-plan {
-  border-radius: 1.1rem;
-  position: relative;
-  overflow: hidden;
+  border-radius: 11px;
+
   width: 75%;
 }
 
@@ -382,19 +415,24 @@
 }
 
 .pricing-plan--complete {
-  padding: 4.8rem;
   background-color: #fdf2e9;
+  padding: 4.8rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .pricing-plan--complete::after {
-  content: "best value";
+  content: "Best value";
   position: absolute;
-  top: 4%;
-  right: -8%;
-  font-size: 1.6rem;
+  top: 6%;
+  right: -18%;
+
+  text-transform: uppercase;
+  font-size: 1.4rem;
   font-weight: 700;
+  color: #333;
   background-color: #ffd43b;
-  padding: 0.8rem 3.2rem;
+  padding: 0.8rem 8rem;
   transform: rotate(45deg);
 }
 
@@ -431,7 +469,7 @@
   color: #6f6f6f;
 }
 
-.plan-sign-up {
+.plan-sing-up {
   text-align: center;
   margin-top: 4.8rem;
 }
@@ -446,9 +484,9 @@
   color: #e67e22;
   height: 3.2rem;
   width: 3.2rem;
-  margin-bottom: 3.2rem;
   background-color: #fdf2e9;
-  padding: 1.1rem;
+  margin-bottom: 3.2rem;
+  padding: 1.6rem;
   border-radius: 50%;
 }
 
@@ -464,30 +502,38 @@
   line-height: 1.8;
 }
 
-/* **************** */
-/* cta section */
+/**************************/
+/* CTA SECTION */
+/**************************/
 
 .section-cta {
-  padding: 4.8rem 0 12.8rem 0;
+  /* top / right / bottom / left */
+  /* padding: 9.6rem 0 12.8rem 0; */
+
+  /* top / horizontal / left */
+  padding: 4.8rem 0 12.8rem;
 }
 
 .cta {
   display: grid;
+  /* 2/3 = 66.6% + 1/3 = 33.3% */
   grid-template-columns: 2fr 1fr;
-  background-image: linear-gradient(45deg, #e67e22, #eea564);
+  /* background-color: #e67e22; */
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
+  border-radius: 11px;
 
-  border-radius: 1.1rem;
+  background-image: linear-gradient(to right bottom, #eb984e, #e67e22);
   overflow: hidden;
-  box-shadow: 0 2.4rem 2.8rem rgba(0, 0, 0, 0.1);
 }
 
 .cta-text-box {
-  padding: 6.4rem;
+  padding: 4.8rem 6.4rem 6.4rem 6.4rem;
   color: #45260a;
 }
 
 .cta .heading-secondary {
-  color: #45260a;
+  /* color: #45260a; */
+  color: inherit;
   margin-bottom: 3.2rem;
 }
 
@@ -499,12 +545,13 @@
 
 .cta-img-box {
   background-image: linear-gradient(
-      rgba(231, 127, 35, 0.35),
-      rgba(231, 127, 35, 0.35)
+      to right bottom,
+      rgba(235, 151, 78, 0.35),
+      rgba(230, 125, 34, 0.35)
     ),
-    url(../img/eating.jpg);
-
+    url("../img/eating.jpg");
   background-size: cover;
+  background-position: center;
 }
 
 .cta-form {
@@ -530,7 +577,7 @@
   color: inherit;
   border: none;
   background-color: #fdf2e9;
-  border-radius: 0.9rem;
+  border-radius: 9px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
@@ -538,22 +585,32 @@
   color: #aaa;
 }
 
-/* **************** */
-/* footer */
+.cta *:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.8rem rgba(253, 242, 233, 0.5);
+}
+
+/**************************/
+/* FOOTER */
+/**************************/
 
 .footer {
   padding: 12.8rem 0;
   border-top: 1px solid #eee;
 }
 
-.footer-logo {
-  display: block;
-  margin-bottom: 3.2rem;
+.grid--footer {
+  grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr;
 }
 
 .logo-col {
   display: flex;
   flex-direction: column;
+}
+
+.footer-logo {
+  display: block;
+  margin-bottom: 3.2rem;
 }
 
 .social-links {
@@ -569,8 +626,8 @@
 
 .copyright {
   font-size: 1.4rem;
-  color: #767676;
   line-height: 1.6;
+  color: #767676;
   margin-top: auto;
 }
 
@@ -586,7 +643,7 @@
   line-height: 1.6;
 }
 
-.adress {
+.address {
   margin-bottom: 2.4rem;
 }
 
@@ -608,4 +665,53 @@
 .footer-link:hover,
 .footer-link:active {
   color: #555;
+}
+
+.no-flexbox-gap .main-nav-list li:not(:last-child) {
+  margin-right: 4.8rem;
+}
+
+.no-flexbox-gap .list-item:not(:last-child) {
+  margin-bottom: 1.6rem;
+}
+
+.no-flexbox-gap .list-icon:not(:last-child) {
+  margin-right: 1.6rem;
+}
+
+.no-flexbox-gap .delivered-faces {
+  margin-right: 1.6rem;
+}
+
+.no-flexbox-gap .meal-attribute:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.no-flexbox-gap .meal-icon {
+  margin-right: 1.6rem;
+}
+
+.no-flexbox-gap .footer-row div:not(:last-child) {
+  margin-right: 6.4rem;
+}
+
+.no-flexbox-gap .social-links li:not(:last-child) {
+  margin-right: 2.4rem;
+}
+
+.no-flexbox-gap .footer-nav li:not(:last-child) {
+  margin-bottom: 2.4rem;
+}
+
+@media (max-width: 75em) {
+  .no-flexbox-gap .main-nav-list li:not(:last-child) {
+    margin-right: 3.2rem;
+  }
+}
+
+@media (max-width: 59em) {
+  .no-flexbox-gap .main-nav-list li:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 4.8rem;
+  }
 }
